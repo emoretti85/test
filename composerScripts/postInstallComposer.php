@@ -1,16 +1,21 @@
 #!/usr/bin/php
 <?php
+define ("DS", DIRECTORY_SEPARATOR);
 
-$composerProjectBase = basename(realpath(".")).DIRECTORY_SEPARATOR;
-echo "COMPOSER PROJECT BASE PATH : " . $composerProjectBase;
+//Recupero il path del progetto
+$composerProjectBase = getcwd().DS;
 
-$projectBase = dirname(dirname(__FILE__));
-echo "PACKAGE PROJECT BASE PATH : " . $projectBase;
+//Recupero il path del package
+$bootstrapSkeletonFolder = dirname(dirname(__FILE__)). DS . "skel";
 
-$bootstrapSkeletonFolder = $projectBase. DIRECTORY_SEPARATOR . "skel";
-
-$directories = glob($bootstrapSkeletonFolder . '/*' , GLOB_ONLYDIR);
-foreach ($directories as $dir) {
-    copy($dir, $composerProjectBase.basename($dir));
-    echo "COPIO DIRECTORY : " . $dir . " IN " . $composerProjectBase.basename($dir);
+//Ciclo nella folder Skel dove sono le cartelle e i file da creare nel progetto
+foreach (glob($bootstrapSkeletonFolder . '/*' , GLOB_ONLYDIR) as $dir) {
+    //Creo la cartella nel progetto
+    mkdir($composerProjectBase.basename($dir));
+    
+    //Copio tutti i file
+    $files = array_diff(scandir($dir), array('.', '..'));
+    foreach ($files as $file) {
+        copy($dir.DS.$file, $composerProjectBase.basename($dir).DS.$file);
+    }
 }
