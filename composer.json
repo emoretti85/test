@@ -8,5 +8,12 @@
   "require": {
     "php": ">=7.2",
     "slim/slim": "^3.12"
+  },
+  "extra": {
+    "test-app-dir": "app",
+    "test-bin-dir": "bin",
+    "test-var-dir": "var",
+    "test-web-dir": "web",
+    "test-tests-dir": "tests"
   }
 }
