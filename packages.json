@@ -1,6 +1,6 @@
 {
   "package": {
-    "name": "vendor/test_prj",
+    "name": "Em/prj_example",
     "version": "1.0.0",
     "source": {
       "url": "https://github.com/emoretti85/test",
