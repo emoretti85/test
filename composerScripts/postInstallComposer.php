@@ -2,11 +2,13 @@
 <?php
 namespace em\composerScripts;
 
+use Composer\Script\Event;
+
 define ("DS", DIRECTORY_SEPARATOR);
 
 
 class InstallerScripts{
-    public static function postInstall(){
+    public static function postInstall(Event $event){
         //Recupero il path del progetto
         $composerProjectBase = getcwd().DS;
 
