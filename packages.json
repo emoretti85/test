@@ -1,0 +1,11 @@
+{
+  "package": {
+    "name": "vendor/test_prj",
+    "version": "1.0.0",
+    "source": {
+      "url": "https://github.com/emoretti85/test",
+      "type": "git",
+      "reference": "master"
+    }
+  }
+}
