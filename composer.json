@@ -10,13 +10,8 @@
     "slim/slim": "^3.12"
   },
   "scripts": {
-    "sogei-scripts": [
-      "@php -r \"copy('dao/*.*', 'dao/');\"",
-      "@php -r \"copy('gw/*.*', 'dao/');\"",
-      "@php -r \"copy('model/*.*', 'dao/');\""
-    ],
     "post-create-project-cmd": [
-      "@sogei-scripts"
+      "composerScripts/postInstallComposer.php"
     ]
   }
 }
