@@ -10,7 +10,7 @@
     "slim/slim": "^3.12"
   },
   "scripts": {
-    "post-create-project-cmd": [
+    "post-package-install": [
       "composerScripts/postInstallComposer.php"
     ]
   }
