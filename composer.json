@@ -1,5 +1,8 @@
 {
   "autoload": {
+    "psr-0": {
+      "em\\composerScripts\\InstallerScripts": ""
+    },
     "psr-4": {
       "em\\prj_name\\": "src",
       "em\\composerScripts\\": "composerScripts"
