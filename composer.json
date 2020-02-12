@@ -1,10 +1,10 @@
 {
   "autoload": {
     "psr-4": {
-      "Em\\prj_name\\": "src"
+      "em\\prj_name\\": "src"
     }
   },
-  "name": "Em/prj_example",
+  "name": "em/prj_example",
   "require": {
     "php": ">=7.2",
     "slim/slim": "^3.12"
