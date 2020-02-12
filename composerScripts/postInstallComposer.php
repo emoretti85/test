@@ -9,6 +9,8 @@ define ("DS", DIRECTORY_SEPARATOR);
 
 class InstallerScripts{
     public static function postInstall(Event $event){
+        $composer = $event->getComposer();
+        
         //Recupero il path del progetto
         $composerProjectBase = getcwd().DS;
 
