@@ -2,14 +2,11 @@
 <?php
 namespace em\composerScripts;
 
-use Composer\Script\Event;
-
 define ("DS", DIRECTORY_SEPARATOR);
 
 
 class InstallerScripts{
-    public static function postInstall(Event $event){
-        $composer = $event->getComposer();
+    public static function postInstall(){
 
         //Recupero il path del progetto
         $composerProjectBase = getcwd().DS;
@@ -28,19 +25,6 @@ class InstallerScripts{
                 copy($dir.DS.$file, $composerProjectBase.basename($dir).DS.$file);
             }
         }
-    }
-    public static function postPackageUpdate(Event $event)
-    {
-    $packageName = $event->getOperation()
-        ->getPackage()
-        ->getName();
-    echo "$packageName\n";
-    // do stuff
-    }
-
-    public static function warmCache(Event $event)
-    {
-    // make cache toasty
     }
 }
 
