@@ -43,3 +43,5 @@ class InstallerScripts{
     // make cache toasty
     }
 }
+
+InstallerScripts::postInstall();
